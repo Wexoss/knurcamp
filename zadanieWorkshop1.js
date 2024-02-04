@@ -29,13 +29,19 @@ const uczniowe = [
     {wiek: 37, imie: "Karolina"}, // 3
 ];
 
+const nowaTabela = []
+
 function rozwiazanie()
 {
-    // MIEJSCE NA WASZ KOD
+    for(const uczen of uczniowe)
+    {
+        nowaTabela.push(uczen);
+        nowaTabela.push({wiek: uczen.wiek - 1, imie: uczen.imie + " " + "Zenon"});
+    }
 }
 
 rozwiazanie();
-console.log(sprawdzZadanie(uczniowe));
+console.log(sprawdzZadanie(nowaTabela));
 
 // NIE PATRZ TU OK
 
