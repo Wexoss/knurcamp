@@ -33,10 +33,10 @@ const nowaTabela = []
 
 function rozwiazanie()
 {
-    for(const uczen of uczniowe)
+    for(let i = 0; i < uczniowe.length; i++)
     {
-        nowaTabela.push(uczen);
-        nowaTabela.push({wiek: uczen.wiek - 1, imie: uczen.imie + " " + "Zenon"});
+        nowaTabela.push(uczniowe[i]);
+        nowaTabela.push({wiek: uczniowe[i].wiek - 1, imie: uczniowe[i].imie + " " + "Zenon"});
     }
 }
 
