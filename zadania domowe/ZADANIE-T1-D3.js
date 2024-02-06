@@ -90,8 +90,6 @@ function zakupy(balansPortfela, towary) {
     }
 
     balansPortfela -= najdrozszyTowar.koszt;
-    console.log(balansPortfela);
-    console.log(JSON.stringify(towary));
 
     if (najdrozszyTowar.nazwa === "Knur") {
       // Sprawdza czy 1 pętla nadpisała najdrozszy towar, jeśli nie to znaczy, że nie ma co już kupić i wychodzi z łajla XD
