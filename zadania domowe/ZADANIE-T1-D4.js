@@ -61,7 +61,8 @@ const POZIOM_TRUDNOSCI = 3; // 1 albo 2 albo 3
 
 // MIEJSCE NA TWÓJ KOD
 
-let systemZaufaniaSpolecznego = 0; /* Za przejście każdego poziomu kontroli, petent otrzymywał 1 punkt, aby wsiąść do samolotu potrzebne są 2 punkty, przy 0 punktach petent nie jest aresztowany tylko zawracany do strefy bezcłowej z możliwością wypicia 7 browarów i powrotu do domu. */
+let systemZaufaniaSpolecznego = 0; /* Za przejście każdego poziomu kontroli, petent otrzymywał 1 punkt, aby wsiąść do samolotu potrzebne są 2 punkty,
+przy 0 punktach petent nie jest aresztowany tylko zawracany do strefy bezcłowej z możliwością wypicia 7 browarów i powrotu do domu. */
 
 const nieWpuszczamy = ["BOŚNIA", "ROSJA", "WATYKAN"];
 const ktoKiedyLecial = {};
