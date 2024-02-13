@@ -1,0 +1,64 @@
+@media screen and (min-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+body {
+    background-image: url("./knuryibarka/bakground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.gora, .srodek, .dol {
+    margin: 0px;
+}
+
+input {
+    width: 62px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 70px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#godzinka {
+    display: block;
+    margin-left: 75px;
+}
+
+#knur {
+    width: 450px;
+    padding-right: 50px;
+}
+
+#barka {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#nieczekam {
+    background-color: #f44336;
+    border: none;
+}
+
+#nieczekam:hover {
+  background-color: #04AA6D; /* Green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: white;
+  cursor:pointer
+}
+
+#wiazemy:hover {
+    cursor:help 
+}
