@@ -79,8 +79,10 @@ const nieBedeCzekal = () => {
     ktoraGodzina();
   }
   const ElBarka = document.getElementById("barka");
+  const godzinaPaluch = godzinaZPalucha.slice(0, 2);
+  const minutaPaluch = godzinaZPalucha.slice(3);
 
-  if (ElBarka !== null && godzinaZPalucha !== "21:37") {
+  if (ElBarka !== null && godzinaPaluch != "21" && minutaPaluch != "37") {
     ElBarka.parentNode.removeChild(ElBarka);
   }
 };
