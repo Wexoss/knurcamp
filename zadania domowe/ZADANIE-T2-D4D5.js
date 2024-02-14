@@ -25,7 +25,7 @@ const malpiFetch = async (method, url) => {
 
 const trudneSieWylosowalo = async () => {
   await spanko(2222);
-  console.log("Losu losu losu");
+  console.log("Losu losu losu losu");
 };
 
 spanko(10);
