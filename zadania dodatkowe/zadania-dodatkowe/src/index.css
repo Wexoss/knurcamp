@@ -1,0 +1,17 @@
+.czerwone, .zielone, .pomaranczowe {
+  background-color: none;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  display: flex;
+}
+
+.zadanie3 {
+  display: flex;
+}
+
+.zadanie3-div {
+  margin: 10px;
+}
