@@ -2,30 +2,26 @@ import { useState } from "react";
 
 export const SygnalizacjaV2 = () => {
   const kolory = ["red", "orange", "green"];
-  const [color, setColor] = useState("red");
-  const [index, setIndex] = useState(1);
+  const [aktywnyIndex, setAktywnyIndex] = useState(0);
 
   const zamiana = () => {
-    setColor(kolory[index]);
-    setIndex(index + 1);
-    if (index === 2) {
-      setIndex(0);
-    }
+    const ostatniIndex = kolory.length - 1
+    setAktywnyIndex(aktywnyIndex === ostatniIndex ? 0 : aktywnyIndex + 1);
   };
 
   return (
     <div>
       <p
         className="czerwone"
-        style={{ backgroundColor: color === "red" ? "red" : "white" }}
+        style={{ backgroundColor: kolory[aktywnyIndex] === "red" ? "red" : "white" }}
       ></p>
       <p
         className="pomaranczowe"
-        style={{ backgroundColor: color === "orange" ? "orange" : "white" }}
+        style={{ backgroundColor: kolory[aktywnyIndex] === "orange" ? "orange" : "white" }}
       ></p>
       <p
         className="zielone"
-        style={{ backgroundColor: color === "green" ? "green" : "white" }}
+        style={{ backgroundColor: kolory[aktywnyIndex] === "green" ? "green" : "white" }}
       ></p>
       <button onClick={zamiana}>Zmien Sygnał</button>
     </div>
