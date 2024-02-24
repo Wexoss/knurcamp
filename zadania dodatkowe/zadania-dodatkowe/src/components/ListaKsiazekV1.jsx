@@ -12,13 +12,13 @@ export const ListaKsiazekV1 = () => {
         onChange={(e) => setKsiazka(new RegExp(e.target.value, "gi"))}
       />
       {ksiazka === ""
-        ? books.map((book, index) => (
-            <div key={index}>
+        ? books.map((book) => (
+            <div key={book}>
               <p>{book}</p>
             </div>
           ))
-        : szukaneKsiazki.map((book, index) => (
-            <div key={index}>
+        : szukaneKsiazki.map((book) => (
+            <div key={book}>
               <p>{book}</p>
             </div>
           ))}
