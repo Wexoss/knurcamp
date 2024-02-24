@@ -1,34 +1,50 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const SygnalizacjaV3 = () => {
   const kolory = ["red", "orange", "green"];
-  const [colors, setColors] = useState(["red", "red", "red", "red", "red"]);
+  const [aktywnyIndex, setAktywnyIndex] = useState(0);
+  const [startStop, setStartStop] = useState("stop");
 
-  const zamiana = (index) => {
-    const newColors = [...colors];
-    newColors[index] = kolory[(kolory.indexOf(newColors[index]) + 1) % kolory.length];
-    setColors(newColors);
-
-  };
+  useEffect(() => {
+    if (startStop === "stop") {
+      return;
+    }
+    const ostatniIndex = kolory.length - 1;
+    const interwal = setInterval(() => {
+      setAktywnyIndex(aktywnyIndex === ostatniIndex ? 0 : aktywnyIndex + 1);
+    }, 1000);
+    return () => clearInterval(interwal);
+  });
 
   return (
-    <div className="zadanie3">
-      {colors.map((color,index) => 
-      <div className="zadanie3-div" key={index}>
-        <p
+    <div>
+      <p
         className="czerwone"
-        style={{ backgroundColor: color === "red" ? "red" : "white" }}
+        style={{
+          backgroundColor: kolory[aktywnyIndex] === "red" ? "red" : "white",
+        }}
       ></p>
       <p
         className="pomaranczowe"
-        style={{ backgroundColor: color === "orange" ? "orange" : "white" }}
+        style={{
+          backgroundColor:
+            kolory[aktywnyIndex] === "orange" ? "orange" : "white",
+        }}
       ></p>
       <p
         className="zielone"
-        style={{ backgroundColor: color === "green" ? "green" : "white" }}
+        style={{
+          backgroundColor: kolory[aktywnyIndex] === "green" ? "green" : "white",
+        }}
       ></p>
-      <button onClick={() =>zamiana(index)}>Zmien Sygnał</button>
-      </div>)}
+      <button
+        onClick={() =>
+          startStop === "stop" ? setStartStop("start") : setStartStop("stop")
+        }
+        style={{ backgroundColor: startStop === "stop" ? "green" : "red" }}
+      >
+        {startStop === "stop" ? "Start" : "Stop"}
+      </button>
     </div>
   );
 };
