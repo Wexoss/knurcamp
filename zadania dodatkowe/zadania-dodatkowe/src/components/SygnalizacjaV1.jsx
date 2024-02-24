@@ -2,34 +2,29 @@ import { useState, useEffect } from "react";
 
 export const SygnalizacjaV1 = () => {
   const kolory = ["red", "orange", "green"];
-  const [color, setColor] = useState("red");
-  const [index, setIndex] = useState(1);
+  const [aktywnyIndex, setAktywnyIndex] = useState(0)
 
   useEffect(() => {
+    const ostatniIndex = kolory.length - 1
     const interwal = setInterval(() => {
-      setColor(kolory[index]);
-      setIndex(index + 1);
-      if (index === 2) {
-        setIndex(0);
-      }
+      setAktywnyIndex(aktywnyIndex === ostatniIndex ? 0 : aktywnyIndex + 1);
     }, 3000);
-    return () => clearInterval(interwal);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
+    return () => clearInterval(interwal)
+  })
 
   return (
     <div>
       <p
         className="czerwone"
-        style={{ backgroundColor: color === "red" ? "red" : "white" }}
+        style={{ backgroundColor: kolory[aktywnyIndex] === "red" ? "red" : "white" }}
       ></p>
       <p
         className="pomaranczowe"
-        style={{ backgroundColor: color === "orange" ? "orange" : "white" }}
+        style={{ backgroundColor: kolory[aktywnyIndex] === "orange" ? "orange" : "white" }}
       ></p>
       <p
         className="zielone"
-        style={{ backgroundColor: color === "green" ? "green" : "white" }}
+        style={{ backgroundColor: kolory[aktywnyIndex] === "green" ? "green" : "white" }}
       ></p>
     </div>
   );
