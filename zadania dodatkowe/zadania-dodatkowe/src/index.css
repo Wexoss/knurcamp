@@ -15,3 +15,23 @@
 .zadanie3-div {
   margin: 10px;
 }
+
+
+.notatki {
+  display: flex;
+}
+
+.lewaStrona {
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sejv {
+  margin-top: 10px;
+}
