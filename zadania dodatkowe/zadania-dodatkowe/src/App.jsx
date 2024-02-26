@@ -5,17 +5,12 @@ import { PolscyNoblisciV1 } from "./components/PolscyNoblisciV1"
 import { PolscyNoblisciV2 } from "./components/PolscyNoblisciV2"
 import { ListaKsiazekV1 } from "./components/ListaKsiazekV1"
 import { PogodaV1 } from "./components/PogodaV1"
+import { NotatkiV1 } from "./components/NotatkiV1"
 
 function App() {
   return (
     <>
-      <SygnalizacjaV1/>
-      <SygnalizacjaV2/>
-      <SygnalizacjaV3/>
-      <PolscyNoblisciV1/>
-      <PolscyNoblisciV2/>
-      <ListaKsiazekV1/>
-      <PogodaV1 />
+      <NotatkiV1/>
     </>
   )
 }
