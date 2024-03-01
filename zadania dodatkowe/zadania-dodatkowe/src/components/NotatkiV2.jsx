@@ -40,7 +40,7 @@ export const NotatkiV2 = () => {
   const [data, setData] = useState(initialState);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  let actualSection = data[activeIndex].sectionName;
+  const currentSection = data[activeIndex].sectionName;
 
   const sections = data.map((section, currentIndex) => {
     return (
@@ -77,7 +77,7 @@ export const NotatkiV2 = () => {
 
     const newNote = { text: anotherNote, id: getId() };
     const updateSection = data.map((section) => {
-      if (section.sectionName === actualSection) {
+      if (section.sectionName === currentSection) {
         return {
           ...section,
           notes: [...section.notes, newNote],
@@ -98,12 +98,12 @@ export const NotatkiV2 = () => {
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
-            const newItem = formData.get(actualSection);
+            const newItem = formData.get(currentSection);
             addNewNote(newItem);
             form.reset();
           }}
         >
-          <input type="text" name={actualSection} />
+          <input type="text" name={currentSection} />
           <button type="submit" className="sejv">
             Save
           </button>
